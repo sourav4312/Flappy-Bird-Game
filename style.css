@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.background {
+    height: 100vh;
+    width: 100vw;
+    background: url('images/background-img.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.bird {
+    height: 10vh; /* Responsive height */
+    width: auto; /* Maintain aspect ratio */
+    position: fixed;
+    top: 40vh;
+    left: 30vw;
+    z-index: 100;
+}
+.pipe_sprite {
+    position: fixed;
+    top: 40vh;
+    left: 100vw;
+    height: 70vh; /* Default pipe height */
+    width: 6vw; /* Default pipe width */
+    background: radial-gradient(lightgreen 50%, green);
+    border: 5px solid black;
+}
+.message {
+    position: absolute;
+    z-index: 10;
+    color: black;
+    top: 30%;
+    left: 50%;
+    font-size: 4vw; /* Scaled with screen width */
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.messageStyle {
+    background: white;
+    padding: 2vw; /* Scaled padding */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5%;
+}
+.score {
+    position: fixed;
+    z-index: 10;
+    height: auto;
+    font-size: 8vw; /* Scaled with screen width */
+    font-weight: 100;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.score_val {
+    color: gold;
+    font-weight: bold;
+}
+@media only screen and (max-width: 1080px) {
+    .message {
+        font-size: 6vw; /* Larger text for small screens */
+        top: 50%;
+        white-space: nowrap;
+    }
+    .score {
+        font-size: 6vh; /* Adjusted for smaller screens */
+    }
+    .bird {
+        width: 15vw; /* Slightly larger for visibility */
+        height: auto;
+    }
+    .pipe_sprite {
+        width: 8vw; /* Wider pipes for smaller screens */
+        height: 60vh; /* Adjusted height */
+    }
+}
+@media only screen and (max-width: 768px) {
+    .message {
+        font-size: 7vw; /* Larger text for smaller screens */
+        top: 50%;
+    }
+    .score {
+        font-size: 5vh; /* Smaller but still visible */
+    }
+    .bird {
+        width: 20vw; /* Even larger for small screens */
+        height: auto;
+    }
+    .pipe_sprite {
+        width: 10vw; /* Wider pipes */
+        height: 50vh; /* Reduced height */
+    }
+}
+@media only screen and (max-width: 480px) {
+    .message {
+        font-size: 8vw; /* Larger text for very small screens */
+        top: 50%;
+    }
+    .score {
+        font-size: 4vh; /* Small but visible */
+    }
+    .bird {
+        width: 25vw; /* Maximize visibility */
+        height: auto;
+    }
+    .pipe_sprite {
+        width: 12vw; /* Wider pipes */
+        height: 40vh; /* Shorter pipes */
+    }
+}
